@@ -1,0 +1,65 @@
+{
+  "name": "islomurodov.uz",
+  "description": "Islom Murodov's portfolio website",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.1.1",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "homepage": "https://islomurodov.uz/",
+  "author": {
+    "name": "Islom Murodov",
+    "email": "brilliantpul@gmail.com",
+    "url": "https://islomurodov.uz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/islomurodov/islomurodov.uz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/islomurodov/islomurodov.uz/issues",
+    "email": "brilliantpul@gmail.com"
+  },
+  "keywords": [
+    "portfolio",
+    "islomurodov",
+    "islom murodov",
+    "website",
+    "frontend developer",
+    "personal"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@vueuse/core": "^10.10.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.390.0",
+    "nuxt": "^3.12.1",
+    "radix-vue": "^1.8.3",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.3"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.21.1",
+    "@nuxt/content": "^2.12.1",
+    "@nuxt/eslint": "^0.3.13",
+    "@nuxtjs/color-mode": "^3.4.1",
+    "@nuxtjs/sitemap": "^5.2.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@studio-freight/lenis": "^1.0.42",
+    "@vercel/analytics": "^1.3.1",
+    "@vite-pwa/nuxt": "^0.8.0",
+    "@vueuse/nuxt": "^10.10.1",
+    "nuxt-icon": "^0.6.10",
+    "shadcn-nuxt": "^0.10.4",
+    "typescript": "^5.4.5"
+  }
+}
