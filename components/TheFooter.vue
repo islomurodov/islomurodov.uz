@@ -36,7 +36,7 @@ const navigation = ref<{ url: string; icon: string }[]>([
     </div>
     <TheContainer class="p-4">
       <ul
-        class="flex w-full lg:justify-start justify-around gap-x-8 sm:gap-x-10 gap-y-4 lg:px-4"
+        class="flex w-full lg:justify-start justify-between md:justify-around gap-x-8 sm:gap-x-10 gap-y-4 lg:px-4"
       >
         <li v-for="(item, i) in navigation" :key="i" class="interactable">
           <a :href="item.url" target="_blank">

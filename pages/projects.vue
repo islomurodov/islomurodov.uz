@@ -92,6 +92,9 @@ const projects = ref<
           :key="project.title"
           :href="project.link"
         >
+          <Head>
+            <Link rel="prefetch" :href="project.imageUrl" />
+          </Head>
           <li
             class="relative group overflow-hidden rounded-xl interactable cursor-pointer shadow-md"
           >

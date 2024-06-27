@@ -99,7 +99,9 @@ function closeMenu() {
       <div class="flex items-center gap-10">
         <div
           class="block z-20"
-          :class="{ 'fixed top-10 right-10': isMenuOpen }"
+          :class="{
+            'fixed top-10 right-5 sm:right-10 md:right-20': isMenuOpen,
+          }"
         >
           <DarkToggle />
         </div>
@@ -119,7 +121,7 @@ function closeMenu() {
       <button
         @click="toggleMenu"
         class="z-20 flex -order-2 items-center justify-center lg:hidden"
-        :class="{ 'fixed top-10 left-10': isMenuOpen }"
+        :class="{ 'fixed top-10 left-5 sm:left-10 md:left-20': isMenuOpen }"
       >
         <Icon v-if="!isMenuOpen" name="ph:list" class="text-3xl" />
         <Icon v-else name="ph:x" class="text-3xl" />
