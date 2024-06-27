@@ -34,6 +34,10 @@ const isMenuOpen = ref<boolean>(false);
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
 }
+
+function closeMenu() {
+  isMenuOpen.value = false;
+}
 </script>
 
 <template>
@@ -54,7 +58,7 @@ function toggleMenu() {
           class="relative interactable lg:text-base grid lg:hover:underline place-items-center text-2xl lg:font-medium font-semibold after:content-[''] after:absolute after:w-[150%] after:scale-x-0 after:h-px after:-bottom-2 after:origin-bottom after:transition-transform after:duration-300 after:ease-out after:bg-black dark:after:bg-white hover:after:scale-x-100"
           :class="{ 'lg:hidden': !item.isLarge }"
         >
-          <NuxtLink :to="item.slug" @click="toggleMenu">
+          <NuxtLink :to="item.slug" @click="closeMenu">
             {{ item.name }}
           </NuxtLink>
         </li>
