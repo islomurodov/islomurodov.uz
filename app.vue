@@ -1,15 +1,20 @@
 <script setup lang="ts">
-import { appName } from '~/constants'
+import { appName } from "~/constants";
 
 useHead({
   title: appName,
-})
+});
+
+useSeoMeta({
+  title: appName,
+});
 </script>
 
 <template>
   <NuxtLayout>
     <NuxtPage />
     <AppCursor />
+    <CommandPalette />
   </NuxtLayout>
 </template>
 
@@ -33,7 +38,7 @@ body,
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: 'Islomurodov', sans-serif;
+  font-family: "Islomurodov", sans-serif;
   overflow-x: hidden;
   transition: background 0.5s ease, color 0.5 ease;
 }
@@ -61,7 +66,7 @@ html.lenis body {
 
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .page-enter,
@@ -72,7 +77,7 @@ html.lenis body {
 
 .page-enter-active {
   transform-origin: top center;
-  animation: bounce-in 0.6s ease;
+  animation: bounce-in 0.4s ease;
 }
 
 .page-leave-active {

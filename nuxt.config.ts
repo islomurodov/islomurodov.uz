@@ -2,35 +2,24 @@ import { pwa } from './config/pwa'
 import { appCreator, appDescription, appName } from "./constants";
 
 export default defineNuxtConfig({
-  modules: [
-    '@vueuse/nuxt',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
-    'shadcn-nuxt',
-    '@nuxt/eslint',
-    'nuxt-icon',
-    '@nuxtjs/sitemap',
-    '@nuxt/content',
-    '@pinia/nuxt'
-  ],
+  modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'shadcn-nuxt', '@nuxt/eslint', 'nuxt-icon', '@nuxtjs/sitemap', '@nuxt/content', '@pinia/nuxt', '@nuxt/image'],
 
   runtimeConfig: {
-    BASE_URL: import.meta.env.NUXT_APP_BASE_URL,
     PUBLIC_URL: import.meta.env.NUXT_APP_PUBLIC_URL,
     BOT_TOKEN: import.meta.env.NUXT_APP_BOT_TOKEN,
     CHAT_ID: import.meta.env.NUXT_APP_CHAT_ID
   },
 
   site: {
-    url: import.meta.env.NUXT_APP_BASE_URL,
     name: appName,
+    url: import.meta.env.NUXT_APP_PUBLIC_URL
   },
 
   content: {
     highlight: {
       theme: {
-        default: 'vitesse-light',
-        dark: 'vitesse-dark'
+        default: 'github-light',
+        dark: 'one-dark-pro'
       },
       langs: ['js', 'javascript', 'typescript', 'markdown', 'ts', 'vue', 'css', 'scss', 'sass', 'html', 'bash', 'md', 'mdc', 'json', 'cmd', 'powershell']
     }
@@ -102,7 +91,7 @@ export default defineNuxtConfig({
 
   pwa,
 
-  devtools: { enabled: false },
+  devtools: { enabled: true },
 
   eslint: {
     config: {
