@@ -11,11 +11,14 @@ useSeoMeta({
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-    <AppCursor />
-    <CommandPalette />
-  </NuxtLayout>
+  <div>
+    <VitePwaManifest />
+    <NuxtLayout>
+      <NuxtPage />
+      <AppCursor />
+      <CommandPalette />
+    </NuxtLayout>
+  </div>
 </template>
 
 <style>
