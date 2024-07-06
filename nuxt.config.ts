@@ -59,6 +59,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width,initial-scale=1',
       link: [
         { rel: 'icon', href: '/logo.png', sizes: 'any' },
+        { rel: 'preconnect', href: "https://i.ibb.co/" },
         { rel: 'canonical', href: import.meta.env.NUXT_APP_PUBLIC_URL }
       ],
       meta: [
@@ -84,7 +85,8 @@ export default defineNuxtConfig({
         { name: 'apple-mobile-web-app-title', content: 'Islom Murodov' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
         { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#fffdfc' },
-        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#020a13' },
+        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#020a13' }, ,
+        { name: 'robots', content: 'index, nofollow' }
       ]
     },
   },
