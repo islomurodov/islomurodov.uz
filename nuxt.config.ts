@@ -85,7 +85,7 @@ export default defineNuxtConfig({
         { name: 'apple-mobile-web-app-title', content: 'Islom Murodov' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
         { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#fffdfc' },
-        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#020a13' }, ,
+        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#020a13' },
         { name: 'robots', content: 'index, nofollow' }
       ]
     },
