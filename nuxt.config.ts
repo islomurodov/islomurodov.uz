@@ -2,7 +2,7 @@ import { pwa } from './config/pwa'
 import { appCreator, appDescription, appName } from "./constants";
 
 export default defineNuxtConfig({
-  modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'shadcn-nuxt', '@nuxt/eslint', 'nuxt-icon', '@nuxtjs/sitemap', '@nuxt/content', '@pinia/nuxt', '@nuxt/image'],
+  modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'shadcn-nuxt', '@nuxt/eslint', 'nuxt-icon', '@nuxtjs/sitemap', '@nuxt/content', '@pinia/nuxt', '@nuxt/image', '@vite-pwa/nuxt'],
 
   runtimeConfig: {
     PUBLIC_URL: import.meta.env.NUXT_APP_PUBLIC_URL,
