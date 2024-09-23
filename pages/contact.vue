@@ -5,17 +5,21 @@ const state = reactive<{
   name: string;
   email: string;
   message: string;
+  isLoading: boolean
 }>({
   name: "",
   email: "",
   message: "",
+  isLoading: false
 });
 
 async function handleSubmit() {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
   if (state.name && emailPattern.test(state.email) && state.message) {
+    state.isLoading = true
     try {
+      state.isLoading = true
       const { status } = await useFetch("/api/contact", {
         method: "POST",
         headers: {
@@ -35,12 +39,15 @@ async function handleSubmit() {
           spread: 100,
           origin: { y: 0.6 },
         });
+        state.isLoading = false
       } else if (status.value === "error") {
         state.name = "";
         state.email = "";
         state.message = "";
+        state.isLoading = false
       }
     } catch (error) {
+      state.isLoading = false
       throw error;
     }
   }
@@ -59,11 +66,7 @@ definePageMeta({
         <p class="text-ring text-sm sm:text-base">
           Get in touch or shoot me an email directly on
           <b class="text-black dark:text-white">
-            <a
-              href="mailto:hi@islomurodov.uz"
-              target="_blank"
-              class="interactable underline"
-            >
+            <a href="mailto:hi@islomurodov.uz" target="_blank" class="interactable underline">
               hi@islomurodov.uz
             </a>
           </b>
@@ -72,33 +75,19 @@ definePageMeta({
       <form @submit.prevent="handleSubmit" autocomplete="off">
         <div class="space-y-4">
           <div>
-            <Input
-              type="text"
-              v-model="state.name"
-              autocomplete="name"
-              required
-              placeholder="Name"
-            />
+            <Input type="text" v-model="state.name" autocomplete="name" required placeholder="Name" />
           </div>
           <div>
-            <Input
-              type="email"
-              autocomplete="email"
-              v-model="state.email"
-              required
-              placeholder="Email"
-            />
+            <Input type="email" autocomplete="email" v-model="state.email" required placeholder="Email" />
           </div>
           <div>
-            <Textarea
-              v-model="state.message"
-              rows="5"
-              required
-              placeholder="Message"
-            />
+            <Textarea v-model="state.message" rows="5" required placeholder="Message" />
           </div>
-          <Button type="submit" @click="handleSubmit" class="interactable">
+          <Button :disabled="state.isLoading" type="submit" @click="handleSubmit"
+            class="interactable inline-flex items-center gap-2 ">
             Send Message
+            <Icon v-if="state.isLoading" name="svg-spinners:180-ring-with-bg"
+              class="dark:text-black text-white text-lg" />
           </Button>
         </div>
       </form>

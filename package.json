@@ -35,6 +35,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@nuxtjs/seo": "2.0.0-rc.21",
     "@vueuse/core": "^10.10.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

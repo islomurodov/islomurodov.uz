@@ -61,7 +61,7 @@ const socials = ref<
     icon: "ph:youtube-logo-duotone",
   },
   {
-    name: "X",
+    name: "X (Twitter)",
     url: "https://x.com/islomurodov",
     icon: "ph:x-logo-duotone",
   },
@@ -106,10 +106,7 @@ watch(AltK, (v) => {
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Navigation">
           <NuxtLink :to="nav.slug" v-for="nav in navigation" :key="nav.name">
-            <CommandItem
-              :value="nav.name"
-              class="flex items-center gap-3 interactable"
-            >
+            <CommandItem :value="nav.name" class="flex items-center gap-3 interactable">
               <Icon name="ph:arrow-bend-up-right-bold" />
               {{ nav.name }}
             </CommandItem>
@@ -117,16 +114,8 @@ watch(AltK, (v) => {
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Socials">
-          <a
-            :href="social.url"
-            target="_blank"
-            v-for="social in socials"
-            :key="social.name"
-          >
-            <CommandItem
-              :value="social.name"
-              class="flex items-center gap-3 interactable"
-            >
+          <a :href="social.url" target="_blank" v-for="social in socials" :key="social.name">
+            <CommandItem :value="social.name" class="flex items-center gap-3 interactable">
               <Icon :name="social.icon" />
               {{ social.name }}
             </CommandItem>
@@ -134,11 +123,7 @@ watch(AltK, (v) => {
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Look & Feel">
-          <CommandItem
-            value="toggle theme"
-            class="flex items-center gap-3 interactable"
-            @click="toggleDark"
-          >
+          <CommandItem value="toggle theme" class="flex items-center gap-3 interactable" @click="toggleDark">
             <Icon name="ph:circle-half-duotone" />
             Toggle theme
           </CommandItem>
@@ -148,10 +133,8 @@ watch(AltK, (v) => {
     <TheContainer class="mb-5 hidden lg:block">
       <p class="text-base text-muted-foreground text-center">
         Press
-        <kbd
-          @click="open = true"
-          class="interactable cursor-pointer min-h-[30px] min-w-[30px] inline-flex justify-center items-center py-1 px-1.5 bg-white border border-gray-200 font-mono text-sm text-gray-800 rounded-md dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200"
-        >
+        <kbd @click="open = true"
+          class="interactable cursor-pointer min-h-[30px] min-w-[30px] inline-flex justify-center items-center py-1 px-1.5 bg-white border border-gray-200 font-mono text-sm text-gray-800 rounded-md dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
           Alt + K
         </kbd>
         to open up command pallette menu.

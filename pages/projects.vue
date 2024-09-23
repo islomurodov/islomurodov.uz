@@ -86,31 +86,18 @@ const projects = ref<
     <TheContainer>
       <TheTitle />
       <ul class="grid sm:grid-cols-2 mt-5 gap-3 md:gap-4 w-full max-w-4xl">
-        <a
-          target="_blank"
-          v-for="project in projects"
-          :key="project.title"
-          :href="project.link"
-        >
+        <a target="_blank" v-for="project in projects" :key="project.title" :href="project.link">
+
           <Head>
             <Link rel="prefetch" :href="project.imageUrl" />
           </Head>
-          <li
-            class="relative group overflow-hidden rounded-xl interactable cursor-pointer shadow-md"
-          >
+          <li class="relative group overflow-hidden rounded-xl interactable cursor-pointer shadow-md">
             <div>
-              <NuxtImg
-                loading="lazy"
-                :src="project.imageUrl"
-                :alt="project.title"
-              />
+              <NuxtImg loading="eager" :src="project.imageUrl" :alt="project.title" />
             </div>
             <div
-              class="absolute opacity-0 duration-300 group-hover:opacity-100 bottom-0 flex items-end left-0 w-full h-full pb-4 sm:pb-8 bg-gradient-to-b from-transparent from-0% to-90% to-black"
-            >
-              <div
-                class="container space-y-1 duration-300 translate-y-3 group-hover:translate-y-0"
-              >
+              class="absolute opacity-0 duration-300 group-hover:opacity-100 bottom-0 flex items-end left-0 w-full h-full pb-4 sm:pb-8 bg-gradient-to-b from-transparent from-0% to-90% to-black">
+              <div class="container space-y-1 duration-300 translate-y-3 group-hover:translate-y-0">
                 <h3 class="text-xl sm:text-xl lg:text-3xl font-bold text-white">
                   {{ project.title }}
                 </h3>
@@ -119,11 +106,8 @@ const projects = ref<
                 </p>
                 <div class="py-1"></div>
                 <ul class="flex flex-wrap gap-4">
-                  <li
-                    v-for="technology in project.technologies"
-                    :key="technology"
-                    class="rounded-xl px-3 py-1 text-xs bg-gray-700 text-white"
-                  >
+                  <li v-for="technology in project.technologies" :key="technology"
+                    class="rounded-xl px-3 py-1 text-xs bg-gray-700 text-white">
                     {{ technology }}
                   </li>
                 </ul>
