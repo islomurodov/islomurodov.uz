@@ -3,7 +3,7 @@
   "description": "Islom Murodov's portfolio website",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@1.1.1",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
