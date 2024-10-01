@@ -1,4 +1,5 @@
 import { pwa } from "./config/pwa";
+import { useNuxt } from "nuxt/kit";
 import { appCreator, appDescription, appName } from "./constants";
 
 export default defineNuxtConfig({
@@ -17,6 +18,19 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
   ],
 
+  $production: {
+    experimental: {
+      noVueServer: true,
+    },
+    modules: ["nuxt-security"],
+  },
+
+  $test: {
+    experimental: {
+      componentIslands: true,
+    },
+  },
+
   runtimeConfig: {
     PUBLIC_URL: import.meta.env.NUXT_APP_PUBLIC_URL,
     BOT_TOKEN: import.meta.env.NUXT_APP_BOT_TOKEN,
@@ -26,6 +40,17 @@ export default defineNuxtConfig({
   site: {
     name: appName,
     url: import.meta.env.NUXT_APP_PUBLIC_URL,
+  },
+
+  hooks: {
+    "components:extend": (components) => {
+      const nuxt = useNuxt();
+      for (const comp of components) {
+        if (comp.pascalName === "StaticMarkdownRender" && nuxt.options.dev) {
+          comp.mode = "all";
+        }
+      }
+    },
   },
 
   content: {
@@ -59,6 +84,20 @@ export default defineNuxtConfig({
     payloadExtraction: false,
     renderJsonPayloads: true,
     typedPages: true,
+    viewTransition: true,
+    headNext: true,
+    cookieStore: true,
+  },
+
+  sourcemap: false,
+
+  security: {
+    headers: {
+      crossOriginEmbedderPolicy: false,
+      contentSecurityPolicy: {
+        "script-src-attr": ["'self'", "'unsafe-inline'"],
+      },
+    },
   },
 
   css: ["@/assets/css/tailwind.css"],
@@ -76,6 +115,33 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: ["/", "/rss.xml"],
+    },
+    hooks: {
+      "prerender:generate"(route) {
+        if (route.fileName)
+          route.fileName = route.fileName.replace(
+            /(\.\w{3})\/index.html$/,
+            "$1"
+          );
+
+        if (route.fileName?.endsWith(".html") && route.contents) {
+          route.contents = route.contents.replace(
+            /(src|href|srcset)="\/_ipx[^"]+"/g,
+            (r) => r.replaceAll("//", "/")
+          );
+        }
+
+        if (route.error) {
+          if (route.route.startsWith("/_ipx")) {
+            console.warn("Could not prerender", route.route);
+            // ignore IPX rendering errors
+            delete route.error;
+          } else {
+            console.error(route.route, route.error, route);
+            process.exit(1);
+          }
+        }
+      },
     },
   },
 
@@ -135,7 +201,6 @@ export default defineNuxtConfig({
           media: "(prefers-color-scheme: dark)",
           content: "#020a13",
         },
-        { name: "robots", content: "index, nofollow" },
       ],
       script: [
         {
@@ -192,5 +257,9 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
+  },
+
+  future: {
+    compatibilityVersion: 4,
   },
 });

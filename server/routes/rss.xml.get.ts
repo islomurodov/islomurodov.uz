@@ -1,9 +1,14 @@
 import { serverQueryContent } from "#content/server";
 import RSS from "rss";
+import { appDescription } from "~/constants";
 
 export default defineEventHandler(async (event) => {
+  if (!import.meta.dev && !import.meta.prerender) return;
+
   const feed = new RSS({
     title: "Islom Murodov",
+    description: appDescription,
+    copyright: `© 2021-${new Date().getFullYear()} Islom Murodov. All rights reserved.`,
     site_url: "https://islomurodov.uz",
     feed_url: "https://islomurodov.uz/rss.xml",
   });
@@ -18,7 +23,7 @@ export default defineEventHandler(async (event) => {
     feed.item({
       title: doc.title ?? "-",
       url: `https://islomurodov.uz${doc._path}`,
-      date: doc.date,
+      date: new Date(doc.date),
       description: doc.description,
     });
   }
