@@ -49,37 +49,20 @@ function closeMenu() {
           isMenuOpen
             ? 'visible opacity-100 -translate-y-0 scale-100'
             : 'opacity-0 invisible -translate-y-5 scale-95',
-        ]"
-      >
-        <li
-          v-for="item in navigation"
-          :key="item.name"
-          v-show="item.slug !== route.fullPath"
+        ]">
+        <li v-for="item in navigation" :key="item.name" v-show="item.slug !== route.fullPath"
           class="relative interactable lg:text-base grid lg:hover:underline place-items-center text-2xl lg:font-medium font-semibold after:content-[''] after:absolute after:w-[150%] after:scale-x-0 after:h-px after:-bottom-2 after:origin-bottom after:transition-transform after:duration-300 after:ease-out after:bg-black dark:after:bg-white hover:after:scale-x-100"
-          :class="{ 'lg:hidden': !item.isLarge }"
-        >
+          :class="{ 'lg:hidden': !item.isLarge }">
           <NuxtLink :to="item.slug" @click="closeMenu">
             {{ item.name }}
           </NuxtLink>
         </li>
         <li class="grid place-items-center lg:hidden space-y-4 mt-4">
-          <a
-            href="https://www.buymeacoffee.com/islom"
-            target="_blank"
-            class="z-10 interactable hover:opacity-90"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-              alt="Buy Me a Coffee"
-              class="h-11"
-            />
+          <a href="https://www.buymeacoffee.com/islom" target="_blank"
+            class="z-10 bg-yellow-400 interactable hover:opacity-90 p-2 rounded-md" rel="noopener noreferrer">
+            <Icon name="line-md:buy-me-a-coffee-twotone" class="text-3xl text-gray-800" />
           </a>
-          <a
-            href="https://github.com/sponsors/islomurodov"
-            target="_blank"
-            class="interactable z-10"
-          >
+          <a href="https://github.com/sponsors/islomurodov" target="_blank" class="interactable z-10">
             <Button class="text-base gap-2">
               <Icon name="ph:hand-heart-duotone" class="text-2xl" />
               Support me
@@ -88,41 +71,25 @@ function closeMenu() {
         </li>
       </ul>
       <div class="flex items-center">
-        <NuxtLink
-          aria-label="Islom Murodov Home"
-          to="/"
-          class="absolute interactable transition-transform duration-300 ease-linear hover:scale-105 active:scale-100 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 whitespace-nowrap select-none text-2xl font-extrabold"
-        >
+        <NuxtLink aria-label="Islom Murodov Home" to="/"
+          class="absolute interactable transition-transform duration-300 ease-linear hover:scale-105 active:scale-100 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 whitespace-nowrap select-none text-2xl font-extrabold">
           Islomurodov
         </NuxtLink>
       </div>
       <div class="flex items-center gap-10">
-        <div
-          class="block z-20"
-          :class="{
-            'fixed top-10 right-5 sm:right-10 md:right-20': isMenuOpen,
-          }"
-        >
+        <div class="block z-20" :class="{
+          'fixed top-10 right-5 sm:right-10 md:right-20': isMenuOpen,
+        }">
           <DarkToggle />
         </div>
-        <a
-          href="https://www.buymeacoffee.com/islom"
-          target="_blank"
-          class="lg:block hidden z-10 interactable hover:opacity-90"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-            alt="Buy Me a Coffee"
-            class="h-10"
-          />
+        <a href="https://www.buymeacoffee.com/islom" target="_blank"
+          class="lg:inline-flex hidden z-10 interactable items-center hover:opacity-90 bg-yellow-400 rounded-md p-1.5"
+          rel="noopener noreferrer">
+          <Icon name="line-md:buy-me-a-coffee-twotone" class="text-3xl text-gray-800" />
         </a>
       </div>
-      <button
-        @click="toggleMenu"
-        class="z-20 flex -order-2 items-center justify-center lg:hidden"
-        :class="{ 'fixed top-10 left-5 sm:left-10 md:left-20': isMenuOpen }"
-      >
+      <button @click="toggleMenu" class="z-20 flex -order-2 items-center justify-center lg:hidden"
+        :class="{ 'fixed top-10 left-5 sm:left-10 md:left-20': isMenuOpen }">
         <Icon v-if="!isMenuOpen" name="ph:list" class="text-3xl" />
         <Icon v-else name="ph:x" class="text-3xl" />
       </button>
