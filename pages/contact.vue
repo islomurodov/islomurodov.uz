@@ -22,9 +22,6 @@ async function handleSubmit() {
       state.isLoading = true
       const { status } = await useFetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
         body: {
           text: `*Name: * ${state.name}\n*Email: * ${state.email}\n*Message: * ${state.message}`,
         },

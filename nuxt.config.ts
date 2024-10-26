@@ -11,12 +11,15 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "nuxt-icon",
     "@nuxtjs/sitemap",
-    "@nuxt/content",
     "@pinia/nuxt",
     "@nuxt/image",
     "@vite-pwa/nuxt",
     "@nuxtjs/seo",
   ],
+
+  routeRules: {
+    "/api/**": { cors: true },
+  },
 
   $production: {
     experimental: {
@@ -50,33 +53,6 @@ export default defineNuxtConfig({
           comp.mode = "all";
         }
       }
-    },
-  },
-
-  content: {
-    highlight: {
-      theme: {
-        default: "github-light",
-        dark: "one-dark-pro",
-      },
-      langs: [
-        "js",
-        "javascript",
-        "typescript",
-        "markdown",
-        "ts",
-        "vue",
-        "css",
-        "scss",
-        "sass",
-        "html",
-        "bash",
-        "md",
-        "mdc",
-        "json",
-        "cmd",
-        "powershell",
-      ],
     },
   },
 
@@ -114,7 +90,7 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,
-      routes: ["/", "/rss.xml"],
+      routes: ["/"],
     },
     hooks: {
       "prerender:generate"(route) {
@@ -250,7 +226,6 @@ export default defineNuxtConfig({
   },
 
   pwa,
-
   devtools: { enabled: true },
 
   eslint: {
@@ -262,4 +237,6 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+
+  compatibilityDate: "2024-10-27",
 });
