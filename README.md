@@ -1,6 +1,6 @@
 # My own portfolio website
 
-As a web developer, obviously I have to acquire my own portfolio website, so I made this one.
+As a web developer, obviously I have to acquire my own portfolio website, so I made this one inspired by codewonders.dev
 
 https://islomurodov.uz/
 
