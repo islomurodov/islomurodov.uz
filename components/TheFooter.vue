@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const navigation = ref<{ url: string; icon: string, title: string }[]>([
-  {
-    url: "https://t.me/eeslom",
-    icon: "ph:telegram-logo-duotone",
-    title: 'Telegram'
-  },
+  // {
+  //   url: "https://t.me/eeslom",
+  //   icon: "ph:telegram-logo-duotone",
+  //   title: 'Telegram'
+  // },
   {
     url: "https://github.com/islomurodov",
     icon: "ph:github-logo-duotone",
