@@ -5,41 +5,31 @@ definePageMeta({
 </script>
 
 <template>
+
   <div class="w-full md:py-16 py-10">
     <TheContainer>
       <article class="flex flex-col gap-y-4">
-        <h1
-          class="glitch text-balance font-medium relative uppercase tracking-widest"
-          data-text="I'M ISLOM MURODOV"
-        >
+        <h1 class="glitch text-balance font-medium relative uppercase tracking-widest" data-text="I'M ISLOM MURODOV">
           I'M ISLOM MURODOV
         </h1>
         <p class="text-ring leading-8">
           Your friendly neighborhood frontend developer and JavaScript engineer.
           I spend my days (often nights) to exploring my potential (how much can
           I handle)
-          <NuxtLink
-            to="/projects"
-            class="interactable font-bold dark:text-white text-black hover:opacity-90 underline uppercase"
-          >
+          <NuxtLink to="/projects"
+            class="interactable font-bold dark:text-white text-black hover:opacity-90 underline uppercase">
             PROJECTS
           </NuxtLink>
           and playing some
-          <a
-            class="interactable font-bold dark:text-white text-black hover:opacity-90 underline uppercase"
-            href="https://iccup.com/dota/gamingprofile/wodota_islom"
-            target="_blank"
-            >Dota 1</a
-          >,
+          <a class="interactable font-bold dark:text-white text-black hover:opacity-90 underline uppercase"
+            href="https://iccup.com/dota/gamingprofile/wodota_islom" target="_blank">Dota 1</a>,
         </p>
         <p class="text-ring leading-8">
           Laptops and keyboards enthusiast. I tread the path of minimalism,
           finding beauty in simplicity and order. Anyways you can
-          <NuxtLink
-            to="/contact"
-            class="interactable font-bold dark:text-white text-black underline hover:opacity-90 uppercase"
-            >CONTACT ME</NuxtLink
-          >
+          <NuxtLink to="/contact"
+            class="interactable font-bold dark:text-white text-black underline hover:opacity-90 uppercase">CONTACT ME
+          </NuxtLink>
         </p>
       </article>
       <FooterLink to="/about">See More About Me </FooterLink>

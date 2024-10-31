@@ -42,6 +42,7 @@
     "lucide-vue-next": "^0.390.0",
     "nuxt": "^3.13.2",
     "nuxt-security": "^2.0.0",
+    "partysocket": "^1.0.2",
     "radix-vue": "^1.9.7",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",

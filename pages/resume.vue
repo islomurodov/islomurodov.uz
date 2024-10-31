@@ -19,24 +19,16 @@ definePageMeta({
             </NuxtLink>
           </b>
           <b class="text-black dark:text-white">
-            <a
-              href="https://drive.google.com/file/d/10zdPD4JXenoUFRk5R-vQQO6Fuem16Y63/view?usp=sharing"
-              target="_blank"
-              class="interactable hover:underline"
-            >
+            <a href="https://drive.google.com/file/d/10zdPD4JXenoUFRk5R-vQQO6Fuem16Y63/view?usp=sharing" target="_blank"
+              class="interactable hover:underline">
               View or download
             </a>
           </b>
           the resume.
         </p>
       </div>
-      <embed
-        src="https://drive.google.com/file/d/10zdPD4JXenoUFRk5R-vQQO6Fuem16Y63/preview"
-        type="application/pdf"
-        width="740"
-        height="780"
-        :title="`${appCreator} Resumé`"
-      />
+      <embed src="https://drive.google.com/file/d/10zdPD4JXenoUFRk5R-vQQO6Fuem16Y63/preview" type="application/pdf"
+        width="740" height="780" :title="`${appCreator} Resumé`" />
       <FooterLink to="/contact">
         Are you convinced to contact me now ?
       </FooterLink>

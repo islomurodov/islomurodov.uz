@@ -26,6 +26,10 @@ export default defineNuxtConfig({
       noVueServer: true,
     },
     modules: ["nuxt-security"],
+    image: {
+      domains: ["i.ibb.co", "islomurodov.vercel.app", "islomurodov.uz"],
+      format: ["webp"],
+    },
   },
 
   $test: {
