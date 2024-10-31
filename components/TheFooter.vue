@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const navigation = ref<{ url: string; icon: string, title: string }[]>([
   {
-    url: "https://t.me/eeslom",
+    url: "https://t.me/islom_power",
     icon: "ph:telegram-logo-duotone",
     title: 'Telegram'
   },
